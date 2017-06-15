@@ -1,0 +1,22 @@
+<%= form_for(boo) do |f| %>
+  <% if boo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(boo.errors.count, "error") %> prohibited this boo from being saved:</h2>
+
+      <ul>
+      <% boo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :hola %>
+    <%= f.text_field :hola %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
