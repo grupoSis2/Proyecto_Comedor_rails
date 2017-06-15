@@ -4547,3 +4547,352 @@ Processing by BoosController#index as HTML
 Completed 200 OK in 108ms (Views: 103.2ms | ActiveRecord: 1.4ms)
 
 
+Started GET "/boos/new" for 127.0.0.1 at 2017-06-15 13:45:43 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BoosController#new as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering boos/new.html.erb within layouts/application
+  Rendered boos/_form.html.erb (26.4ms)
+  Rendered boos/new.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 504ms (Views: 425.8ms | ActiveRecord: 16.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-15 13:45:52 -0400
+Processing by BoosController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering boos/index.html.erb within layouts/application
+  [1m[36mBoo Load (0.5ms)[0m  [1m[34mSELECT "boos".* FROM "boos"[0m
+  Rendered boos/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 92ms (Views: 87.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-15 13:49:32 -0400
+Processing by BoosController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering boos/index.html.erb within layouts/application
+  [1m[36mBoo Load (0.6ms)[0m  [1m[34mSELECT "boos".* FROM "boos"[0m
+  Rendered boos/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 125ms (Views: 118.6ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-06-15 13:49:35 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"x1j9KSP1tYkuaMo15bN3v/9AWXXXhhSlCAGguabEC1Zw0n40/fJxC956VihTTpadZ2hHXFH88ykLojBVbjc86A=="}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 40ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-15 13:49:35 -0400
+Processing by BoosController#index as HTML
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-06-15 13:49:35 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 86ms (Views: 83.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-15 13:49:44 -0400
+Processing by BoosController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-06-15 13:49:44 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 91ms (Views: 89.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-06-15 13:49:54 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UUSeVr3IG5vdmEsx9UzEnqNt1cuvOy143rJRXEBDBgN/gIC4Bz+ZrPuM+MVKLvum2W8E22oWAYkPW6IUeXPvSQ==", "user"=>{"email"=>"asdff@adf", "password"=>"[FILTERED]"}, "commit"=>"Acceder"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "asdff@adf"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2017-06-15 17:49:54.507345"], ["last_sign_in_at", "2017-06-15 17:40:58.522653"], ["sign_in_count", 5], ["updated_at", "2017-06-15 17:49:54.509134"], ["id", 1]]
+  [1m[35m (15.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 251ms (ActiveRecord: 17.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-15 13:49:54 -0400
+Processing by BoosController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering boos/index.html.erb within layouts/application
+  [1m[36mBoo Load (0.5ms)[0m  [1m[34mSELECT "boos".* FROM "boos"[0m
+  Rendered boos/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 102ms (Views: 96.9ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-06-15 13:50:00 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3e19xmA4/UN7f1P3PWzj2+2QjOcsV6qKOG9PiDHQofEM8TDQNthEByoC3DcZReM77z2w4Wr2rv4oZNqZORaKoA=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-15 13:50:00 -0400
+Processing by BoosController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-06-15 13:50:00 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 82ms (Views: 80.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-15 13:50:14 -0400
+Processing by BoosController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-06-15 13:50:14 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 93ms (Views: 90.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-06-15 14:21:22 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hOo/4R5m50DIK8M0jhTEvTKpiayEFWjuLqXBL0FzRVjGhrjU/l1I3W0yeDyOrCONz6nyVWswrUl31odWXsz8eQ==", "user"=>{"email"=>"asdff@adf", "password"=>"[FILTERED]"}, "commit"=>"Acceder"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "asdff@adf"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 211ms (ActiveRecord: 0.9ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hOo/4R5m50DIK8M0jhTEvTKpiayEFWjuLqXBL0FzRVjGhrjU/l1I3W0yeDyOrCONz6nyVWswrUl31odWXsz8eQ==", "user"=>{"email"=>"asdff@adf", "password"=>"[FILTERED]"}, "commit"=>"Acceder"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 302ms (Views: 95.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-06-15 14:21:29 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SyoFDHWr1NDX2Snu1YwqtOYvbNBMIAG23bGQAwDeutkJRoI5lZB7TXLAkubVNM2EGy8XKaMFxBGEwtZ6H2ED+A==", "user"=>{"email"=>"asdff@adf", "password"=>"[FILTERED]"}, "commit"=>"Acceder"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "asdff@adf"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2017-06-15 18:21:29.970457"], ["last_sign_in_at", "2017-06-15 17:49:54.507345"], ["sign_in_count", 6], ["updated_at", "2017-06-15 18:21:29.972100"], ["id", 1]]
+  [1m[35m (23.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 247ms (ActiveRecord: 25.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-15 14:21:30 -0400
+Processing by BoosController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering boos/index.html.erb within layouts/application
+  [1m[36mBoo Load (0.7ms)[0m  [1m[34mSELECT "boos".* FROM "boos"[0m
+  Rendered boos/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 87ms (Views: 82.4ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-06-15 14:21:37 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CyqRvs2pTkAYhDN7HEq1kdtUYrLjrSpKy21SoKrmmz0z2my8t9XOk/+Y3YKfCfBZuaX50uBSJQ7uNZWOM3qZLw=="}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-15 14:21:37 -0400
+Processing by BoosController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-06-15 14:21:37 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 85ms (Views: 83.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-15 14:21:55 -0400
+Processing by BoosController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-06-15 14:21:55 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 99ms (Views: 96.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-15 14:32:56 -0400
+Processing by BoosController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering boos/index.html.erb within layouts/application
+  [1m[36mBoo Load (0.8ms)[0m  [1m[34mSELECT "boos".* FROM "boos"[0m
+  Rendered boos/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 110ms (Views: 103.3ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-06-15 14:33:27 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UFnev/oZWsz3m4q5eDR8lM0jXCccgZDfcQrkg91lF2q2+7LcNW1GkqRhqr6akBFc6iAVrxVBLCw6H/lP4nUzDQ=="}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-15 14:33:27 -0400
+Processing by BoosController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-06-15 14:33:27 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 85ms (Views: 83.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4998351821317434090);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateTurnos (20170615185237)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (283.6ms)[0m  [1m[35mCREATE TABLE "turnos" ("id" serial primary key, "codigoturno" integer, "horas" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170615185237"]]
+  [1m[35m (17.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (34.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4998351821317434090)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-06-15 14:53:31 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 955ms (Views: 907.5ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/turnos" for 127.0.0.1 at 2017-06-15 14:53:59 -0400
+Processing by TurnosController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-06-15 14:53:59 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 112ms (Views: 110.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-06-15 14:54:07 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fAj8iWeASnvraKfdXoM5gstiMLN3XcE97xU/TlUvial8FeZFfIbskDfuOOwd75G55B2202pXGlhAVENp13WjtQ==", "user"=>{"email"=>"asdff@adf", "password"=>"[FILTERED]"}, "commit"=>"Acceder"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "asdff@adf"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2017-06-15 18:54:07.642187"], ["last_sign_in_at", "2017-06-15 18:21:29.970457"], ["sign_in_count", 7], ["updated_at", "2017-06-15 18:54:07.644565"], ["id", 1]]
+  [1m[35m (46.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/turnos
+Completed 302 Found in 287ms (ActiveRecord: 49.7ms)
+
+
+Started GET "/turnos" for 127.0.0.1 at 2017-06-15 14:54:07 -0400
+Processing by TurnosController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering turnos/index.html.erb within layouts/application
+  [1m[36mTurno Load (1.4ms)[0m  [1m[34mSELECT "turnos".* FROM "turnos"[0m
+  Rendered turnos/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 134ms (Views: 118.0ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-15 14:55:38 -0400
+Processing by BoosController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering boos/index.html.erb within layouts/application
+  [1m[36mBoo Load (0.8ms)[0m  [1m[34mSELECT "boos".* FROM "boos"[0m
+  Rendered boos/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 117ms (Views: 99.0ms | ActiveRecord: 3.7ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-06-15 14:55:58 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wlVZTibAiKqCuuidqztZhpYrnJab8UM5x2rM+Ot7t+cnJxDtMqeozfbCGVgPz0bT7MYIoXZyl3goOaC2izcnbg=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-15 14:55:58 -0400
+Processing by BoosController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-06-15 14:55:58 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 112ms (Views: 109.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-06-15 14:56:01 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lW+T0BoAkoZXAm3g8yR5Br87mQbl1O/7+7sBA7xUzGdJDzEimqk9UYW0OjTe3g5gusJNRf+UWPxBtq4HrbYOPg==", "user"=>{"email"=>"asdff@adf", "password"=>"[FILTERED]"}, "commit"=>"Acceder"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "asdff@adf"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["current_sign_in_at", "2017-06-15 18:56:02.019223"], ["last_sign_in_at", "2017-06-15 18:54:07.642187"], ["sign_in_count", 8], ["updated_at", "2017-06-15 18:56:02.020908"], ["id", 1]]
+  [1m[35m (24.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 249ms (ActiveRecord: 26.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-15 14:56:02 -0400
+Processing by BoosController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering boos/index.html.erb within layouts/application
+  [1m[36mBoo Load (0.8ms)[0m  [1m[34mSELECT "boos".* FROM "boos"[0m
+  Rendered boos/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 119ms (Views: 113.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/turnos" for 127.0.0.1 at 2017-06-15 14:56:09 -0400
+Processing by TurnosController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering turnos/index.html.erb within layouts/application
+  [1m[36mTurno Load (1.3ms)[0m  [1m[34mSELECT "turnos".* FROM "turnos"[0m
+  Rendered turnos/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 113ms (Views: 105.6ms | ActiveRecord: 2.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-06-15 14:56:19 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8UnNjGrUlrRMirjj3sHhjpTbJlzqyif84aSUVVF3IAu6ntDhDJZDU4Tu1qFhSAP1ExMJUgxYtAO263/DgLVMug=="}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-15 14:56:19 -0400
+Processing by BoosController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-06-15 14:56:19 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 111ms (Views: 108.9ms | ActiveRecord: 0.0ms)
+
+

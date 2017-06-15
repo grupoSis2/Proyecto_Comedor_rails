@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codigoturno: 1
+  horas: 1
+
+two:
+  codigoturno: 1
+  horas: 1
