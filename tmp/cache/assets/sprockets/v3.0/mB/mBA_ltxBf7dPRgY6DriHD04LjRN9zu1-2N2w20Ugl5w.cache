@@ -1,0 +1,31 @@
+I"è(function() {
+  var ActualizarHora;
+
+  ActualizarHora = function() {
+    var elementoHoras, elementoMinutos, elementoSegundos, fecha, horas, minutos, pSaludo, segundos;
+    fecha = new Date;
+    segundos = fecha.getSeconds();
+    minutos = fecha.getMinutes();
+    horas = fecha.getHours();
+    elementoHoras = document.getElementById('pHoras');
+    elementoMinutos = document.getElementById('pMinutos');
+    elementoSegundos = document.getElementById('pSegundos');
+    pSaludo = document.getElementById('contSaludo');
+    elementoHoras.textContent = horas;
+    elementoMinutos.textContent = minutos;
+    elementoSegundos.textContent = segundos;
+    if (horas >= 8 && minutos >= 1 && horas < 12) {
+      pSaludo.textContent = 'buenos dÃ­as';
+    }
+    if (horas >= 12 && minutos >= 1 && horas < 19) {
+      pSaludo.textContent = 'buenas tardes';
+    }
+    if (horas >= 19 && minutos >= 1) {
+      pSaludo.textContent = 'buenas noches';
+    }
+  };
+
+  setInterval(ActualizarHora, 1000);
+
+}).call(this);
+:ET
