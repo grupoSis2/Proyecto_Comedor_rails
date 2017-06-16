@@ -1,0 +1,5 @@
+I"H(function() {
+  setInterval(ActualizarHora, 1000);
+
+}).call(this);
+:ET

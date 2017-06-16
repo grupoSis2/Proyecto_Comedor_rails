@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @comensale.nombre %>
+</p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @comensale.codigo %>
+</p>
+
+<%= link_to 'Edit', edit_comensale_path(@comensale) %> |
+<%= link_to 'Back', comensales_path %>

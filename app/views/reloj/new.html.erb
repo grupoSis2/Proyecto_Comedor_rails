@@ -3,16 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <script>
+    function ActualizarHora(){
+    var fecha = new Date();
+    var segundos = fecha.getSeconds();
+    var minutos = fecha.getMinutes();
+    var horas = fecha.getHours();
+ 
+    var elementoHoras = document.getElementById("pHoras");
+    var elementoMinutos = document.getElementById("pMinutos");
+    var elementoSegundos = document.getElementById("pSegundos");
+    var pSaludo = document.getElementById("contSaludo");
+ 
+    elementoHoras.textContent = horas;
+    elementoMinutos.textContent = minutos;
+    elementoSegundos.textContent = segundos;
+    
+ 
+    if (horas >= 8 && minutos >= 1 && horas < 12) {
+        pSaludo.textContent = "buenos días";
+    }
+    if (horas >= 12 && minutos >= 1 && horas < 19) {
+        pSaludo.textContent = "buenas tardes";
+    }
+    if (horas >= 19 && minutos >= 1) {
+        pSaludo.textContent = "buenas noches";
+    }
+}
+ 
+setInterval(ActualizarHora,1000);
+    </script>
 </head>
 <body>
+
+    <h2><section id="contSaludo"></section></h2>
+    <div class="row">
     <section id="contReloj">
-        <p id="pHoras"></p>
-        <p>:</p>
-        <p id="pMinutos"></p>
-        <p>:</p>
-        <p id="pSegundos"></p>
-    </section>
-    <section id="contSaludo"></section>
-    </script>
+      <div class="col s2"><p>Horas</p><h2 id="pHoras"></h2></div>
+      <div class="col s2"><h2>:</h2></div>
+      <div class="col s2"><p>Minutos</p><h2 id="pMinutos"></h2></div>
+      <div class="col s2"><h2>:</h2></div>
+      <div class="col s2"><p>Segundos</p><h2 id="pSegundos"></h2></div>
+      </section>
+    </div>
+    
+    
+
+
+<%= form_tag("/reloj", method: "post") do %>
+  <%= label_tag(:codigo, "Ingrgese su codigo:") %>
+  <%= text_field_tag(:codigo) %>
+  <br>
+  
+  <br>
+  <%= submit_tag("Recoger") %>
+<% end %>
+
     </body>
 </html>

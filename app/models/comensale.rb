@@ -1,0 +1,2 @@
+class Comensale < ApplicationRecord
+end

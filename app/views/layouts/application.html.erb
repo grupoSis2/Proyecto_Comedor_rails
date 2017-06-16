@@ -11,6 +11,13 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Hospital Viedma</a>
+        </div>
+      </nav>
     <%= yield %>
+    <br></br>
+    <%= button_to("Cerrar sesion", destroy_user_session_path, :method => :delete) %>
   </body>
 </html>

@@ -1,0 +1,65 @@
+   
+<h2>Elija un Servicio </h2>
+<%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
+    <div class="row">
+      <div class="col s3">
+      
+      <div class="card">
+            <div class="card-image">
+              <%=image_tag("planilla.png", height: '320', width: '320')%>
+              <span class="card-title">Comeensales</span>
+            </div>
+            <div class="card-content">
+              <p>lista de los comensales</p>
+            </div>
+            <div class="card-action">
+              <p> <%= link_to 'Plantilla de Comensales', comensales_path %></p>
+            </div>
+          </div>
+      </div>
+      <div class="col s3">
+            <div class="card">
+            <div class="card-image">
+              <%=image_tag("images.png", height: '320', width: '320')%>
+              <span class="card-title">Turno</span>
+            </div>
+            <div class="card-content">
+              <p>lista de los Turnos</p>
+            </div>
+            <div class="card-action">
+              <p> <%= link_to 'Turno', turnos_path %></p>
+            </div>
+          </div>
+      </div>
+      <div class="col s3">
+        <div class="card">
+                <div class="card-image">
+                <%=image_tag("acceso.png", height: '320', width: '320')%>
+                <span class="card-title">Control de Acceso</span>
+                </div>
+                <div class="card-content">
+                <p>Control de Acceso de Comensales</p>
+                </div>
+                <div class="card-action">
+                <p> <%= link_to 'Control de Acceso', new_reloj_path  %></p>
+                </div>
+        </div>
+      </div>
+    <div class="col s3">
+        <div class="card">
+                <div class="card-image">
+                <%=image_tag("user.png", height: '320', width: '320')%>
+                <span class="card-title">Crear nuevo Usuario</span>
+                </div>
+                <div class="card-content">
+                <p>Crear nuevo Usuario</p>
+                </div>
+                <div class="card-action">
+                <p> <%= link_to 'Crear nuevo Usuario', user_session_path, :method => :new  %></p>
+                </div>
+        </div>
+      </div>
+    </div>
+    <div class="fixed-action-btn">
+
+  </div>
